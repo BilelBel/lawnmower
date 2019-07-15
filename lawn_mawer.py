@@ -52,6 +52,11 @@ class Action (Enum):
         self.x= x
         self.y =y
         
+    def validate_position (self,limit):
+        valid = False
+        if self.DEFAULTX <= self.x <= limit.x and self.DEFAULTY <= self.y <= limit.y :
+            valid = True
+        return valid
     
     def move (self,direction,step):
         new_pos = Position(self.x,self.y)
