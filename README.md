@@ -3,7 +3,6 @@
 - [Features](#features)
 - [Basic usage](#basic-usage)
 - [Examples](#examples)
- - [Example 1](##example 1)
 
 
 # Prerequisites #
