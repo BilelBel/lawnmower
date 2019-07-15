@@ -70,4 +70,8 @@ class Action (Enum):
             new_pos.y -=step
         return new_pos
             
-
+class LawnMower:
+    "this class represents a lawnMower"
+    def __init__ (self,position,direction):
+        self.position = position
+        self.direction = direction 
