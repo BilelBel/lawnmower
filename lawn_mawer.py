@@ -113,3 +113,19 @@ class LawnMower:
                     self.direction = self.direction.turn_right()
                 if act == Action.LEFT.value:
                     self.direction = self.direction.turn_left()
+                    
+# The following (controler) class represents the fact of mowing a garden                    
+class GardinMowing:
+    def __init__ (self,gardin_limit,lawnmowers,actions):
+        self.limit = gardin_limit
+        self.lawnmowers = lawnmowers
+        self.actions = actions
+        
+    #Lauch lawnmowers
+    def launch(self): 
+        i = 0
+        print ("New lawnmowers positions: ")
+        for l in self.lawnmowers:
+            l.execute_actions(self.actions [i],self.limit)
+            print (l.position.x,l.position.y,l.direction.value)
+            i +=1
