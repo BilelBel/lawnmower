@@ -60,7 +60,7 @@ New lawnmowers positions:
 ## Example 2 ##
 * Content of the input file
 
-```console
+```raw
 5 5
 1 2 F
 GAGAGAGAA
@@ -78,7 +78,7 @@ New lawnmowers positions:
 ## Example 3 ##
 * Content of the input file
 
-```console
+```raw
 5 5
 1 2 N
 GAGAGAGAA
@@ -97,7 +97,7 @@ Wrong actions for the lawnmower number 2
 ## Example 4 ##
 * Content of the input file
 
-```console
+```raw
 55
 1 2 N
 GAGAGAGAA
@@ -113,7 +113,7 @@ Wrong file: Not complete garden coordinates
 ## Example 5 ##
 * Content of the input file
 
-```console
+```raw
 5 5D
 1 2 N
 GAGAGAGAA
@@ -134,7 +134,126 @@ Running the doctest file <test_lawn_mower.txt>:
 ## Command ##
 
 ```raw
-python -m doctest -v  test_lawn_mower.txt
+$python -m doctest -v  test_lawn_mower.txt
 ```
 
 ## Result ##
+```console
+Trying:
+    from lawn_mower import Action
+Expecting nothing
+ok
+Trying:
+    Action.validate_actions("AGD")
+Expecting:
+    True
+ok
+Trying:
+    Action.validate_actions("AGFSD")
+Expecting:
+    False
+ok
+Trying:
+    from lawn_mower import Direction
+Expecting nothing
+ok
+Trying:
+    Direction('N').turn_left().value
+Expecting:
+    'O'
+ok
+Trying:
+    Direction('E').turn_right().value
+Expecting:
+    'S'
+ok
+Trying:
+    from lawn_mower import Position
+Expecting nothing
+ok
+Trying:
+    pos = Position (1,"2F")
+Expecting nothing
+ok
+Trying:
+    pos.is_int()
+Expecting:
+    False
+ok
+Trying:
+    pos = Position (1,2)
+Expecting nothing
+ok
+Trying:
+    pos.is_int()
+Expecting:
+    True
+ok
+Trying:
+    pos.move(Direction('N'),1).y
+Expecting:
+    3
+ok
+Trying:
+    pos.move(Direction('N'),1).x
+Expecting:
+    1
+ok
+Trying:
+    from lawn_mower import LawnMower
+Expecting nothing
+ok
+Trying:
+    lawn_mower1 = LawnMower (Position(1,2),Direction('N'))
+Expecting nothing
+ok
+Trying:
+    lawn_mower1.execute_actions("GAGAGAGAA",Position(5,5))
+Expecting:
+    True
+ok
+Trying:
+    lawn_mower1.position.y
+Expecting:
+    3
+ok
+Trying:
+    lawn_mower1.position.x
+Expecting:
+    1
+ok
+Trying:
+    lawn_mower1.direction.value
+Expecting:
+    'N'
+ok
+Trying:
+    lawn_mower2 = LawnMower (Position(3,3),Direction('E'))
+Expecting nothing
+ok
+Trying:
+    lawn_mower2.execute_actions("AADAADADDA",Position(5,5))
+Expecting:
+    True
+ok
+Trying:
+    lawn_mower2.position.y
+Expecting:
+    1
+ok
+Trying:
+    lawn_mower2.position.x
+Expecting:
+    5
+ok
+Trying:
+    lawn_mower2.direction.value
+Expecting:
+    'E'
+ok
+1 items passed all tests:
+  24 tests in test_lawn_mower.txt
+24 tests in 1 items.
+24 passed and 0 failed.
+Test passed.
+```
