@@ -3,6 +3,7 @@
 - [Features](#features)
 - [Basic usage](#basic-usage)
 - [Examples](#examples)
+- [Unit test](#unit-test)
 
 
 # Prerequisites #
@@ -120,3 +121,15 @@ AADAADADDA
 ```console
 Wrong file: Garden coordinates should be of type integer
 ```
+
+
+# Unit test #
+Running the doctest file <test_lawn_mower.txt>:
+
+## Command ##
+
+```raw
+python -m doctest -v  test_lawn_mower.txt
+```
+
+## Result ##
