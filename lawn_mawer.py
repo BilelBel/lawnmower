@@ -89,7 +89,27 @@ class Action (Enum):
 
 # The following class represents a lawnmower
 class LawnMower:
-    "this class represents a lawnMower"
     def __init__ (self,position,direction):
         self.position = position
         self.direction = direction 
+    
+    # Move a lownmower (only if it won't go out of the garden)
+    def move (self,limit):
+        old_position = self.position
+        if self.position.is_int():
+            new_position = self.position.move(self.direction,1)
+            if new_position.validate_position(limit):
+                self.position = new_position
+            else:
+                self.position = old_position
+                
+    # Execute a given string actions           
+    def execute_actions( self,actions,limit):
+        if Action.validate_actions(actions):
+            for act in actions:
+                if act == Action.MOVE.value:
+                    self.move(limit)
+                if act == Action.RIGHT.value:
+                    self.direction = self.direction.turn_right()
+                if act == Action.LEFT.value:
+                    self.direction = self.direction.turn_left()
