@@ -2,6 +2,7 @@
 - [Prerequisites](#prerequisites)
 - [Features](#features)
 - [Basic usage](#basic-usage)
+- [Example](#example)
 
 
 # Prerequisites #
@@ -26,4 +27,23 @@ To program the mower, it is provided with an input file built as follows:
 
 
 # Basic usage #
+python lawn_mawer.py <input_file>
+
+# Example #
 python lawn_mawer.py input_file
+
+* content of the input file
+```raw
+5 5
+1 2 N
+GAGAGAGAA
+3 3 E
+AADAADADDA
+```
+
+* results:
+```raw
+New lawnmowers positions:
+1 3 N
+5 1 E
+```
