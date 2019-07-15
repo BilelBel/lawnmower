@@ -42,7 +42,7 @@ python lawn_mawer.py input_file
   AADAADADDA
 ```
 
-*    Results:
+  *    Results:
 
 ```console
       New lawnmowers positions:
@@ -60,7 +60,7 @@ python lawn_mawer.py input_file
   AADAADADDA
 ```
 
-* Results:
+  * Results:
 
 ```console
 Wrong direction for the lawn mower number  1
