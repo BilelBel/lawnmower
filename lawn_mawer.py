@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from enum import Enum
+import os
 
 # This class is created for factorize code related to authorised actions
 class Action (Enum):
