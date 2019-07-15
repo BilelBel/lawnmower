@@ -1,0 +1,54 @@
+This is a doctest based regression suite for lawn_mower.py
+Each '>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+ 
+>>> from lawn_mower import Action
+>>> Action.validate_actions("AGD")
+True
+
+>>> Action.validate_actions("AGFSD")
+False
+
+>>> from lawn_mower import Direction
+>>> Direction('N').turn_left().value
+'O'
+>>> Direction('E').turn_right().value
+'S'
+
+
+>>> from lawn_mower import Position
+>>> pos = Position (1,"2F")
+>>> pos.is_int()
+False
+
+>>> pos = Position (1,2)
+>>> pos.is_int()
+True
+
+>>> pos.move(Direction('N'),1).y
+3
+>>> pos.move(Direction('N'),1).x
+1
+
+>>> from lawn_mower import LawnMower
+>>> lawn_mower1 = LawnMower (Position(1,2),Direction('N'))
+>>> lawn_mower1.execute_actions("GAGAGAGAA",Position(5,5))
+True
+>>> lawn_mower1.position.y
+3
+>>> lawn_mower1.position.x
+1
+>>> lawn_mower1.direction.value
+'N'
+
+>>> lawn_mower2 = LawnMower (Position(3,3),Direction('E'))
+>>> lawn_mower2.execute_actions("AADAADADDA",Position(5,5))
+True
+>>> lawn_mower2.position.y
+1
+>>> lawn_mower2.position.x
+5
+>>> lawn_mower2.direction.value
+'E'
+
