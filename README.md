@@ -33,7 +33,8 @@ python lawn_mawer.py <input_file>
 python lawn_mawer.py input_file
 
 * content of the input file
-```raw
+
+```console
 5 5
 1 2 N
 GAGAGAGAA
@@ -42,7 +43,8 @@ AADAADADDA
 ```
 
 * results:
-```raw
+
+```console
 New lawnmowers positions:
 1 3 N
 5 1 E
