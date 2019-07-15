@@ -49,3 +49,39 @@ New lawnmowers positions:
 1 3 N
 5 1 E
 ```
+
+* Content of the input file
+
+```console
+5 5
+1 2 F
+GAGAGAGAA
+3 3 E
+AADAADADDA
+```
+
+* Results:
+
+```console
+Wrong direction for the lawn mower number  1
+New lawnmowers positions:
+5 1 E
+```
+
+* Content of the input file
+
+```console
+5 5
+1 2 N
+GAGAGAGAA
+3 3 E
+AADAADADKA
+```
+
+* Results:
+
+```console
+New lawnmowers positions:
+1 3 N
+Wrong actions for the lawnmower number 2
+```
