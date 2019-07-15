@@ -13,7 +13,7 @@ Install python 3
 This program implements an automatic lawn mowing for rectangular surfaces.
 * Each mower can be programmed to cover the entire surface.
 * The position of the mower is represented by a combination of coordinates (x, y) and a letter indicating the orientation according to the English cardinal notation (N, E, W, S). The lawn is divided into a grid to simplify navigation.
-* To control the mower, we send him a simple sequence of letters. The possible letters are "D", "G" and "A". "D" and "G" rotate the mower 90 ° right or left respectively, without moving it. "A" means that the mower is moved one box in the direction it faces, and without changing its orientation.
+* To control the mower, we send him a simple sequence of letters. The possible letters are "D", "G" and "A". "D" and "G" rotate the mower 90 ° right or left respectively, without moving it. "A" means that the mower is moved one step in the direction it faces, and without changing its orientation.
 * If the position after movement is outside the lawn, the mower will not move, keep its orientation and process the next command.
 * Each mower moves sequentially, which means that the second mower moves only when the first mower has performed its entire series of instructions.
 * When a mower completes a series of instructions, it communicates its position and orientation.
