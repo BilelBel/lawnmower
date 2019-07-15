@@ -51,6 +51,7 @@ New lawnmowers positions:
 5 1 E
 ```
 
+## Example 2 ##
 * Content of the input file
 
 ```console
@@ -68,7 +69,7 @@ Wrong direction for the lawn mower number  1
 New lawnmowers positions:
 5 1 E
 ```
-
+## Example 3 ##
 * Content of the input file
 
 ```console
