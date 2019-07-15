@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 from enum import Enum
+
 class Action (Enum):
     LEFT  = 'G'
     RIGHT = 'D'
@@ -43,4 +44,25 @@ class Action (Enum):
         return valid
     
     
-   
+   class Position:
+    DEFAULTX = 0
+    DEFAULTY = 0
+            
+    def __init__(self,x,y):
+        self.x= x
+        self.y =y
+        
+    
+    def move (self,direction,step):
+        new_pos = Position(self.x,self.y)
+        if direction.value == Direction.NORTH.value:
+            new_pos.y +=step
+        if direction.value == Direction.EAST.value:
+            new_pos.x +=step
+        if direction.value == Direction.WEST.value:
+            new_pos.x -=step
+        if direction.value == Direction.SOUTH.value:
+            new_pos.y -=step
+        return new_pos
+            
+
