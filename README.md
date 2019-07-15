@@ -87,3 +87,36 @@ New lawnmowers positions:
 1 3 N
 Wrong actions for the lawnmower number 2
 ```
+
+## Example 4 ##
+* Content of the input file
+
+```console
+55
+1 2 N
+GAGAGAGAA
+3 3 E
+AADAADADDA
+```
+
+* Results:
+
+```console
+Wrong file: Not complete garden coordinates
+```
+## Example 5 ##
+* Content of the input file
+
+```console
+5 5D
+1 2 N
+GAGAGAGAA
+3 3 E
+AADAADADDA
+```
+
+* Results:
+
+```console
+Wrong file: Garden coordinates should be of type integer
+```
