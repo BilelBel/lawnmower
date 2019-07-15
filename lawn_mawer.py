@@ -9,6 +9,7 @@ class Action (Enum):
     RIGHT = 'D'
     MOVE  = 'A'
     
+    # Check if a given string contains only authorised actions
     def validate_actions (actions):
         valid = True
         authorized_action = [a.value for a in list(Action)]
@@ -32,12 +33,14 @@ class Action (Enum):
     def turn_left (self):
         return self.__change_direction(-1)
 
+    # Switch to another direction according to a given step
     def __change_direction(self, step):
         directions = [d.value for d in list(Direction)]
         current_index = directions.index(self.value)
         new_index = (current_index + step) % len(directions)
         return self.__class__(directions[new_index])
     
+    # Check if a string contains only authorised directions
     def validate_direction (value):
         valid= True
         authorised_directions = [d.value for d in list (Direction)]
