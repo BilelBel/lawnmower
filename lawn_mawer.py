@@ -3,6 +3,7 @@
 
 from enum import Enum
 import os
+import sys
 
 # This class is created for factorize code related to authorised actions
 class Action (Enum):
@@ -22,7 +23,7 @@ class Action (Enum):
         return valid
 
 # This class is created for factorize code related to directions
- class Direction(Enum):
+class Direction(Enum):
     NORTH  ='N'
     EAST   ='E'
     SOUTH  ='S'
@@ -50,7 +51,7 @@ class Action (Enum):
         return valid
     
    # This class reprensents the position (x,y)
-   class Position:
+class Position:
     DEFAULTX = 0 # x= 0 by default
     DEFAULTY = 0 # y= 0 by default
             
