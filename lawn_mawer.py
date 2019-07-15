@@ -107,6 +107,7 @@ class LawnMower:
                 
     # Execute a given string actions           
     def execute_actions( self,actions,limit):
+        valid = True
         if Action.validate_actions(actions):
             for act in actions:
                 if act == Action.MOVE.value:
@@ -115,6 +116,9 @@ class LawnMower:
                     self.direction = self.direction.turn_right()
                 if act == Action.LEFT.value:
                     self.direction = self.direction.turn_left()
+        else:
+            valid = False
+        return valid
                     
 # The following (controler) class represents the fact of mowing a garden                    
 class GardinMowing:
@@ -128,8 +132,10 @@ class GardinMowing:
         i = 0
         print ("New lawnmowers positions: ")
         for l in self.lawnmowers:
-            l.execute_actions(self.actions [i],self.limit)
-            print (l.position.x,l.position.y,l.direction.value)
+            if l.execute_actions(self.actions [i],self.limit):
+                print (l.position.x,l.position.y,l.direction.value)
+            else:
+                print ("Wrong actions for the lawnmower number", i+1)
             i +=1
             
 # Function to parse a given file to lines            
