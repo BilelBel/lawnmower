@@ -27,7 +27,7 @@ To program the mower, it is provided with an input file built as follows:
 
 
 # Basic usage #
-python lawn_mawer.py <input_file>
+python lawn_mawer.py <input_file_path>
 
 # Example #
 python lawn_mawer.py input_file
