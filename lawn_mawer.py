@@ -145,7 +145,6 @@ def parse_file_to_garden_mowing (file_path):
     data = parse_file_to_lines(file_path)
     if data is None:
         print (f"Input file {file_path} does not exist")
-
     else:
         if len(data) % 2 == 1 :
             first_line   = [cordinate for cordinate in data[0].split() ]
@@ -172,5 +171,15 @@ def parse_file_to_garden_mowing (file_path):
              print ("Wrong file: Garden coordinates should be of type integer ")   
         else:
             print ("Wrong file: insufficient number of lines")
-    return gadin_mowing ;
-        
+    return gadin_mowing 
+
+def main(argv):
+    garen_mowing = parse_file_to_garden_mowing(argv)
+    if garen_mowing is not None:
+        garen_mowing.launch()
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        main(sys.argv[1])
+    else:
+        print ("Missing argument: Input file")
