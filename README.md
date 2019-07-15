@@ -50,7 +50,7 @@ New lawnmowers positions:
 5 1 E
 ```
 
-* Content of the input file
+** Content of the input file
 
 ```console
 5 5
