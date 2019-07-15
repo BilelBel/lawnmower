@@ -129,3 +129,12 @@ class GardinMowing:
             l.execute_actions(self.actions [i],self.limit)
             print (l.position.x,l.position.y,l.direction.value)
             i +=1
+            
+# Function to parse a given file to lines            
+def parse_file_to_lines (file_path):
+    if not os.path.exists(file_path):
+        return None
+    with open(file_path, "r") as f:
+        lines = [line for line in f.readlines() if line.strip()]
+    return lines
+
