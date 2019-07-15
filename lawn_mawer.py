@@ -76,6 +76,16 @@ class Action (Enum):
         if direction.value == Direction.SOUTH.value:
             new_pos.y -=step
         return new_pos
+    
+     # Chech if a position p is of type (int,int)
+    def is_int (self):
+        try:
+            self.x= int(self.x)
+            self.y= int(self.y)
+            return True
+        except:
+            return False
+            pass
 
 # The following class represents a lawnmower
 class LawnMower:
