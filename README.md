@@ -35,29 +35,29 @@ python lawn_mawer.py input_file
 * Content of the input file
 
 ```console
-5 5
-1 2 N
-GAGAGAGAA
-3 3 E
-AADAADADDA
+  5 5
+  1 2 N
+  GAGAGAGAA
+  3 3 E
+  AADAADADDA
 ```
 
-* Results:
+*    Results:
 
 ```console
-New lawnmowers positions:
-1 3 N
-5 1 E
+      New lawnmowers positions:
+      1 3 N
+      5 1 E
 ```
 
-** Content of the input file
+* Content of the input file
 
 ```console
-5 5
-1 2 F
-GAGAGAGAA
-3 3 E
-AADAADADDA
+  5 5
+  1 2 F
+  GAGAGAGAA
+  3 3 E
+  AADAADADDA
 ```
 
 * Results:
