@@ -155,27 +155,30 @@ def parse_file_to_garden_mowing (file_path):
     else:
         if len(data) % 2 == 1 :
             first_line   = [cordinate for cordinate in data[0].split() ]
-            gardin_limit = Position (first_line[0],first_line[1])
-            if gardin_limit.is_int():         
-                lawn_mowers  = []
-                actions      = []
-                i = 1
-                while  i < len (data):
-                    lawn_param = [w for w in data[i].split() ]
-                    i+=1
-                    action_str = [w for w in data[i].split() ]
-                    if len (lawn_param) > 2 and len (action_str) > 0:
-                        if Direction.validate_direction (lawn_param[2]):
-                            lawn_mower = LawnMower (Position(lawn_param[0],lawn_param[1]),Direction(lawn_param[2]))
-                            lawn_mowers.append(lawn_mower)
-                            action = action_str[0]
-                            actions.append(action) 
-                        else:
-                            print ("Wrong direction for the lawn mower number ", int (i/2) )
-                    i+=1
-                gadin_mowing = GardinMowing (gardin_limit,lawn_mowers,actions)
+            if len (first_line) >1:
+                gardin_limit = Position (first_line[0],first_line[1])
+                if gardin_limit.is_int():         
+                    lawn_mowers  = []
+                    actions      = []
+                    i = 1
+                    while  i < len (data):
+                        lawn_param = [w for w in data[i].split() ]
+                        i+=1
+                        action_str = [w for w in data[i].split() ]
+                        if len (lawn_param) > 2 and len (action_str) > 0:
+                            if Direction.validate_direction (lawn_param[2]):
+                                lawn_mower = LawnMower (Position(lawn_param[0],lawn_param[1]),Direction(lawn_param[2]))
+                                lawn_mowers.append(lawn_mower)
+                                action = action_str[0]
+                                actions.append(action) 
+                            else:
+                                print ("Wrong direction for the lawn mower number ", int (i/2) )
+                        i+=1
+                    gadin_mowing = GardinMowing (gardin_limit,lawn_mowers,actions)
+                else:
+                    print ("Wrong file: Garden coordinates should be of type integer ")   
             else:
-             print ("Wrong file: Garden coordinates should be of type integer ")   
+                print ("Wrong file: Not complete garden coordinates") 
         else:
             print ("Wrong file: insufficient number of lines")
     return gadin_mowing 
