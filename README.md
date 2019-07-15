@@ -137,7 +137,7 @@ Running the doctest file <test_lawn_mower.txt>:
 $python -m doctest -v  test_lawn_mower.txt
 ```
 
-## Result ##
+## Results ##
 ```console
 Trying:
     from lawn_mower import Action
