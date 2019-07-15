@@ -3,6 +3,7 @@
 
 from enum import Enum
 
+# This class is created for factorize code related to authorised actions
 class Action (Enum):
     LEFT  = 'G'
     RIGHT = 'D'
@@ -18,6 +19,7 @@ class Action (Enum):
                 i+=1
         return valid
 
+# This class is created for factorize code related to directions
  class Direction(Enum):
     NORTH  ='N'
     EAST   ='E'
@@ -43,21 +45,23 @@ class Action (Enum):
             valid = False
         return valid
     
-    
+   # This class reprensents the position (x,y)
    class Position:
-    DEFAULTX = 0
-    DEFAULTY = 0
+    DEFAULTX = 0 # x= 0 by default
+    DEFAULTY = 0 # y= 0 by default
             
     def __init__(self,x,y):
         self.x= x
         self.y =y
-        
+       
+    # Check if a position (x,y) is inside a given rectangular surfaces (x,y) between (DEFAULTX,DEFAULTY) and (limit.x,limit.y)
     def validate_position (self,limit):
         valid = False
         if self.DEFAULTX <= self.x <= limit.x and self.DEFAULTY <= self.y <= limit.y :
             valid = True
         return valid
     
+    # Move according to a given direction
     def move (self,direction,step):
         new_pos = Position(self.x,self.y)
         if direction.value == Direction.NORTH.value:
@@ -69,7 +73,8 @@ class Action (Enum):
         if direction.value == Direction.SOUTH.value:
             new_pos.y -=step
         return new_pos
-            
+
+# The following class represents a lawnmower
 class LawnMower:
     "this class represents a lawnMower"
     def __init__ (self,position,direction):
