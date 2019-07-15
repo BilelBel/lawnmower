@@ -29,12 +29,12 @@ To program the mower, it is provided with an input file built as follows:
 
 # Basic usage #
 ```raw
-python lawn_mawer.py <input_file_path>
+$python lawn_mawer.py <input_file_path>
 ```
 
 # Examples #
 ```raw
-python lawn_mawer.py input_file
+$python lawn_mawer.py input_file
 ```
 
 
