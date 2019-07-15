@@ -32,7 +32,7 @@ python lawn_mawer.py <input_file>
 # Example #
 python lawn_mawer.py input_file
 
-* content of the input file
+* Content of the input file
 
 ```console
 5 5
@@ -42,7 +42,7 @@ GAGAGAGAA
 AADAADADDA
 ```
 
-* results:
+* Results:
 
 ```console
 New lawnmowers positions:
