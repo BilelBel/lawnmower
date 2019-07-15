@@ -2,7 +2,7 @@
 - [Prerequisites](#prerequisites)
 - [Features](#features)
 - [Basic usage](#basic-usage)
-- [Example](#example)
+- [Examples](#examples)
 
 
 # Prerequisites #
@@ -29,9 +29,10 @@ To program the mower, it is provided with an input file built as follows:
 # Basic usage #
 python lawn_mawer.py <input_file_path>
 
-# Example #
+# Examples #
 python lawn_mawer.py input_file
 
+## Example 1 ##
 * Content of the input file
 
 ```console
