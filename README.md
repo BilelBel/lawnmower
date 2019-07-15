@@ -28,15 +28,20 @@ To program the mower, it is provided with an input file built as follows:
 
 
 # Basic usage #
+```raw
 python lawn_mawer.py <input_file_path>
+```
 
 # Examples #
+```raw
 python lawn_mawer.py input_file
+```
+
 
 ## Example 1 ##
 * Content of the input file
 
-```console
+```raw
 5 5
 1 2 N
 GAGAGAGAA
