@@ -16,3 +16,31 @@ class Action (Enum):
                     valid = False
                 i+=1
         return valid
+
+ class Direction(Enum):
+    NORTH  ='N'
+    EAST   ='E'
+    SOUTH  ='S'
+    WEST   ='O'
+    
+    def turn_right (self):
+        return self.__change_direction(1)
+    
+    def turn_left (self):
+        return self.__change_direction(-1)
+
+    def __change_direction(self, step):
+        directions = [d.value for d in list(Direction)]
+        current_index = directions.index(self.value)
+        new_index = (current_index + step) % len(directions)
+        return self.__class__(directions[new_index])
+    
+    def validate_direction (value):
+        valid= True
+        authorised_directions = [d.value for d in list (Direction)]
+        if not value in authorised_directions:
+            valid = False
+        return valid
+    
+    
+   
