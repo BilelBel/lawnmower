@@ -5,7 +5,7 @@ from enum import Enum
 import os
 import sys
 
-# This class is created for factorize code related to authorised actions
+# This class is created for factorizing code related to authorised actions
 class Action (Enum):
     LEFT  = 'G'
     RIGHT = 'D'
@@ -22,7 +22,7 @@ class Action (Enum):
                 i+=1
         return valid
 
-# This class is created for factorize code related to directions
+# This class is created for factorizing code related to directions
 class Direction(Enum):
     NORTH  ='N'
     EAST   ='E'
